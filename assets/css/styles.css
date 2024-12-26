@@ -1,0 +1,232 @@
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/******************************************/
+/*       CHALLENGE STYLES                */
+/******************************************/
+
+/* Colour Scheme */
+:root {
+  --White: #ffffff;
+  --Stone-100: #f3e6d8;
+  --Stone-150: #e4ded8;
+  --Stone-600: #5f574e;
+  --Stone-900: #302d2c;
+  --Brown-800: #854632;
+  --Rose-800: #7b284f;
+  --Rose-50: #fff5fa;
+}
+
+body {
+  font-family: "Outfit", serif;
+  font-size: 16px;
+  line-height: 2;
+
+  background-color: var(--Stone-100);
+  color: var(--Stone-900);
+  margin-block: 120px;
+  margin-inline: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Horizontal Rule  Styles */
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--Stone-150);
+}
+
+/* Container Wrapper Styles */
+#container {
+  min-width: 375px;
+  max-width: 720px;
+  background-color: var(--White);
+  padding: 40px;
+  border-radius: 24px;
+}
+
+#container,
+.main {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  gap: 30px;
+}
+
+.header__image {
+  width: 100%;
+  border-radius: 12px;
+  padding-bottom: 15px;
+}
+
+.header__heading {
+  font-family: "Young Serif", serif;
+}
+
+/* List Styling  */
+.main ul,
+.main ol,
+.main ul li,
+.main ol li {
+  padding-inline-start: 20px;
+}
+
+.main ul li::marker,
+.main ol li::marker {
+  color: var(--Brown-800);
+  font-weight: 800;
+}
+
+/*  Section Heading Styles */
+section h2 {
+  font-family: "Young Serif", serif;
+  color: var(--Brown-800);
+  font-weight: 800;
+}
+
+/* Preparation Section Styles  */
+section.preparation {
+  background-color: var(--Rose-50);
+  padding: 20px;
+  border-radius: 15px;
+}
+
+section.preparation > h2 {
+  font-family: "Outfit", serif;
+  color: var(--Rose-800);
+  font-weight: 600;
+}
+
+section.preparation li::marker {
+  color: var(--Rose-800);
+}
+
+/* Nutrition Section Styles */
+section.nutrition table {
+  border-collapse: collapse;
+  width: 100%;
+  line-height: 2.5;
+}
+
+section.nutrition table caption {
+  text-align: left;
+  padding-block-start: 10px;
+}
+
+section.nutrition tr:not(:last-child) {
+  border-bottom: 1px solid var(--Stone-150); /* Custom border thickness and color */
+}
+
+section.nutrition td:is(:last-child) {
+  color: var(--Brown-800);
+  font-weight: 800;
+}
+
+/* Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.875rem;
+  color: var(--Stone-900);
+}
+
+.footer a {
+  color: var(--Stone-900);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  body,
+  section.nutrition caption {
+    line-height: 1.5;
+  }
+  section.nutrition caption,
+  section h2 {
+    padding-bottom: 10px;
+  }
+
+  #container {
+    padding: 0;
+    padding-block-end: 10px;
+  }
+
+  .header__heading,
+  .header__description,
+  .main {
+    padding-inline: 40px;
+  }
+  .header h1 {
+    font-size: 30px;
+  }
+}
